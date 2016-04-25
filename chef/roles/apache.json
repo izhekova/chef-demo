@@ -1,0 +1,16 @@
+{
+  "name": "apache",
+  "env_run_lists": {},
+  "default_attributes": {},
+  "json_class": "Chef::Role",
+  "run_list": [ 
+    "recipe[apache2]",
+    "recipe[apache2::mod_ssl]",
+    "recipe[apache2::mod_rewrite]",
+    "recipe[apache2::virtualhost]",
+    "recipe[apache2::virtualhost-ssl]",
+    "recipe[openssl]",
+    "recipe[openssl::cert-demo]"],
+  "description": "Installs and configure Apache.",
+  "chef_type": "role"
+}
