@@ -54,9 +54,8 @@ NameVirtualHost *:<%= @params[:server_port] %>
   <% end -%>
 
   # Canonical host, <%= @params[:server_name] %>
-  RewriteCond %{HTTP_HOST}   !^<%= @params[:server_name] %> [NC]
-  RewriteCond %{HTTP_HOST}   !^$
-  RewriteRule ^/(.*)$        https://localhost/$1 [L,R=301]
+  RewriteCond %{HTTPS} off
+  RewriteRule ^/(.*)$        https://%{HTTP_HOST}%{REQUEST_URI}/$1 [L,R=301]
 
   RewriteCond %{DOCUMENT_ROOT}/system/maintenance.html -f
   RewriteCond %{SCRIPT_FILENAME} !maintenance.html
