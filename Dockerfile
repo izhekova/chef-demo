@@ -1,9 +1,6 @@
 FROM debian:wheezy
 MAINTAINER Irena Zhekova <renince@gmail.com>
 
-ENV DOCKER_CHEF_SOLO_UPDATED 20151126
-ENV DEBIAN_FRONTEND noninteractive
-
 RUN echo "Prepare the OS"
 RUN apt-get -y update
 RUN apt-get -y install python-software-properties curl build-essential libxml2-dev libxslt-dev git ruby ruby-dev ca-certificates sudo net-tools vim
